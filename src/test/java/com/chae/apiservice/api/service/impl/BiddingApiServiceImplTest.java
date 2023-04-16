@@ -1,6 +1,6 @@
 package com.chae.apiservice.api.service.impl;
 
-import com.chae.apiservice.api.enumeration.ApiEndpoint;
+import com.chae.apiservice.api.enumeration.ApiEndpointEnumeration;
 import com.chae.apiservice.api.service.RestClient;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,8 +30,8 @@ public class BiddingApiServiceImplTest {
         biddingService.selectAuction(auctionId, biddingId);
 
         Mockito.verify(restClient).callApi(
-                eq(ApiEndpoint.SELECT_AUCTION.getUrlTemplate().replace("{auctionId}", auctionId).replace("{biddingId}", biddingId)),
-                eq(ApiEndpoint.SELECT_AUCTION.getHttpMethod()),
+                eq(ApiEndpointEnumeration.SELECT_AUCTION.getUrlTemplate().replace("{auctionId}", auctionId).replace("{biddingId}", biddingId)),
+                eq(ApiEndpointEnumeration.SELECT_AUCTION.getHttpMethod()),
                 eq(null),
                 any(HttpHeaders.class)
         );

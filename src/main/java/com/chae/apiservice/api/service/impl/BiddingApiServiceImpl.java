@@ -1,6 +1,6 @@
 package com.chae.apiservice.api.service.impl;
 
-import com.chae.apiservice.api.enumeration.ApiEndpoint;
+import com.chae.apiservice.api.enumeration.ApiEndpointEnumeration;
 import com.chae.apiservice.api.service.BiddingApiService;
 import com.chae.apiservice.api.service.RestClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +16,10 @@ public class BiddingApiServiceImpl implements BiddingApiService {
     }
 
     public void selectAuction(String auctionId, String biddingId) {
-        String url = ApiEndpoint.SELECT_AUCTION.getUrlTemplate()
+        String url = ApiEndpointEnumeration.SELECT_AUCTION.getUrlTemplate()
                 .replace("{auctionId}", auctionId)
                 .replace("{biddingId}", biddingId);
-        HttpMethod httpMethod = ApiEndpoint.SELECT_AUCTION.getHttpMethod();
+        HttpMethod httpMethod = ApiEndpointEnumeration.SELECT_AUCTION.getHttpMethod();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 

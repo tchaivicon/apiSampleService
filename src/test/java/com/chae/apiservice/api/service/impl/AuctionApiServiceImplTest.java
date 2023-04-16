@@ -2,7 +2,7 @@ package com.chae.apiservice.api.service.impl;
 
 import com.chae.apiservice.api.dto.RequestAuctionDTO;
 import com.chae.apiservice.api.dto.RequestAuctionResponseDTO;
-import com.chae.apiservice.api.enumeration.ApiEndpoint;
+import com.chae.apiservice.api.enumeration.ApiEndpointEnumeration;
 import com.chae.apiservice.api.service.RestClient;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,8 +35,8 @@ public class AuctionApiServiceImplTest {
         ResponseEntity<String> responseEntity = ResponseEntity.ok(responseBody);
 
         Mockito.when(restClient.callApi(
-                eq(ApiEndpoint.REQUEST_AUCTION.getUrlTemplate().replace("{auctionId}", auctionId)),
-                eq(ApiEndpoint.REQUEST_AUCTION.getHttpMethod()),
+                eq(ApiEndpointEnumeration.REQUEST_AUCTION.getUrlTemplate().replace("{auctionId}", auctionId)),
+                eq(ApiEndpointEnumeration.REQUEST_AUCTION.getHttpMethod()),
                 eq(request),
                 any(HttpHeaders.class)
         )).thenReturn(responseEntity);
@@ -49,8 +49,8 @@ public class AuctionApiServiceImplTest {
         assertEquals(request.getInitialPrice(), response.getInitialPrice());
 
         Mockito.verify(restClient).callApi(
-                eq(ApiEndpoint.REQUEST_AUCTION.getUrlTemplate().replace("{auctionId}", auctionId)),
-                eq(ApiEndpoint.REQUEST_AUCTION.getHttpMethod()),
+                eq(ApiEndpointEnumeration.REQUEST_AUCTION.getUrlTemplate().replace("{auctionId}", auctionId)),
+                eq(ApiEndpointEnumeration.REQUEST_AUCTION.getHttpMethod()),
                 eq(request),
                 any(HttpHeaders.class)
         );

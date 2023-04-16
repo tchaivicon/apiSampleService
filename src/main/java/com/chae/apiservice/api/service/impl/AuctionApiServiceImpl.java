@@ -2,7 +2,7 @@ package com.chae.apiservice.api.service.impl;
 
 import com.chae.apiservice.api.dto.RequestAuctionDTO;
 import com.chae.apiservice.api.dto.RequestAuctionResponseDTO;
-import com.chae.apiservice.api.enumeration.ApiEndpoint;
+import com.chae.apiservice.api.enumeration.ApiEndpointEnumeration;
 import com.chae.apiservice.api.service.AuctionApiService;
 import com.chae.apiservice.api.service.RestClient;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -23,8 +23,8 @@ public class AuctionApiServiceImpl implements AuctionApiService {
 
     @Override
     public RequestAuctionResponseDTO requestAuction(String auctionId, RequestAuctionDTO request) {
-        String url = ApiEndpoint.REQUEST_AUCTION.getUrlTemplate().replace("{auctionId}", auctionId);
-        HttpMethod httpMethod = ApiEndpoint.REQUEST_AUCTION.getHttpMethod();
+        String url = ApiEndpointEnumeration.REQUEST_AUCTION.getUrlTemplate().replace("{auctionId}", auctionId);
+        HttpMethod httpMethod = ApiEndpointEnumeration.REQUEST_AUCTION.getHttpMethod();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
