@@ -1,4 +1,4 @@
-package com.chae.apiservice.api.service.message.service;
+package com.chae.apiservice.message.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

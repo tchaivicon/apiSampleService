@@ -1,6 +1,6 @@
 package com.chae.apiservice.scheduler.service.dao;
 
-import com.chae.apiservice.api.service.message.dto.MessageRequest;
+import com.chae.apiservice.message.dto.MessageRequest;
 
 import java.util.List;
 

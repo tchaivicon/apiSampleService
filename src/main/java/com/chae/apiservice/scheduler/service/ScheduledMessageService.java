@@ -1,9 +1,9 @@
 package com.chae.apiservice.scheduler.service;
 
-import com.chae.apiservice.api.service.message.dto.MessageRequest;
-import com.chae.apiservice.api.service.message.service.Message;
-import com.chae.apiservice.api.service.message.service.MessageService;
-import com.chae.apiservice.api.service.message.service.factory.MessageFactory;
+import com.chae.apiservice.message.dto.MessageRequest;
+import com.chae.apiservice.message.service.Message;
+import com.chae.apiservice.message.service.MessageService;
+import com.chae.apiservice.message.service.factory.MessageFactory;
 import com.chae.apiservice.scheduler.service.dao.ScheduledMessageRepository;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;

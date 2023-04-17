@@ -1,18 +1,17 @@
-package com.chae.apiservice.api.service.message.messages.message;
+package com.chae.apiservice.message.messages.message;
 
-import com.chae.apiservice.api.service.message.dto.MessageRequest;
-import com.chae.apiservice.api.service.message.enumeration.MessageTypeEnumeration;
-import com.chae.apiservice.api.service.message.service.Message;
+import com.chae.apiservice.message.dto.MessageRequest;
+import com.chae.apiservice.message.enumeration.MessageTypeEnumeration;
+import com.chae.apiservice.message.service.Message;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AuctionBidFailedKakaoMessage implements Message {
+public class AuctionBiddingKakaoMessage implements Message {
 
     @Override
     public MessageTypeEnumeration getMessageType() {
-        return MessageTypeEnumeration.AUCTION_BID_FAILED_KAKAO_MESSAGE;
+        return MessageTypeEnumeration.AUCTION_BIDDING_KAKAO_MESSAGE;
     }
-
 
 
     @Override
@@ -34,6 +33,7 @@ public class AuctionBidFailedKakaoMessage implements Message {
     public String getMethod() {
         return "KAKAO";
     }
+
     @Override
     public String getTemplateId() {
         return null;

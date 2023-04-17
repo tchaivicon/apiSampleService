@@ -1,7 +1,7 @@
-package com.chae.apiservice.api.service.message.service;
+package com.chae.apiservice.message.service;
 
-import com.chae.apiservice.api.service.message.dto.MessageRequest;
-import com.chae.apiservice.api.service.message.enumeration.MessageTypeEnumeration;
+import com.chae.apiservice.message.dto.MessageRequest;
+import com.chae.apiservice.message.enumeration.MessageTypeEnumeration;
 
 public interface Message {
     MessageTypeEnumeration getMessageType();

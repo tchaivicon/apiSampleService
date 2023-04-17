@@ -1,4 +1,4 @@
-package com.chae.apiservice.api.service.message.service;
+package com.chae.apiservice.message.service;
 
 public interface MessageSendingService {
     boolean supports(String method);

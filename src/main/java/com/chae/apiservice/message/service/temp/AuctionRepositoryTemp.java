@@ -1,4 +1,4 @@
-package com.chae.apiservice.api.service.message.service.temp;
+package com.chae.apiservice.message.service.temp;
 
 import com.chae.apiservice.api.dto.Auction;
 import com.chae.apiservice.api.service.dao.AuctionRepository;

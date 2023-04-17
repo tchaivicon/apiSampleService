@@ -1,7 +1,7 @@
-package com.chae.apiservice.api.service.message.service.factory;
+package com.chae.apiservice.message.service.factory;
 
-import com.chae.apiservice.api.service.message.dto.MessageRequest;
-import com.chae.apiservice.api.service.message.service.Message;
+import com.chae.apiservice.message.dto.MessageRequest;
+import com.chae.apiservice.message.service.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

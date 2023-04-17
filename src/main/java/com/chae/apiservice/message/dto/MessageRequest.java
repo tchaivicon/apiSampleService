@@ -1,6 +1,6 @@
-package com.chae.apiservice.api.service.message.dto;
+package com.chae.apiservice.message.dto;
 
-import com.chae.apiservice.api.service.message.enumeration.MessageTypeEnumeration;
+import com.chae.apiservice.message.enumeration.MessageTypeEnumeration;
 
 import java.time.LocalDateTime;
 

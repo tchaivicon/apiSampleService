@@ -1,4 +1,4 @@
-package com.chae.apiservice.api.service.message.enumeration;
+package com.chae.apiservice.message.enumeration;
 
 public enum MessageTypeEnumeration {
     VERIFY_AUCTION_KAKAO_MESSAGE,

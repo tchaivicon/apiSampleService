@@ -1,25 +1,25 @@
-package com.chae.apiservice.api.service.message.messages.message;
+package com.chae.apiservice.message.messages.message;
 
 import com.chae.apiservice.api.dto.Auction;
-import com.chae.apiservice.api.service.message.dto.MessageRequest;
-import com.chae.apiservice.api.service.message.enumeration.MessageTypeEnumeration;
-import com.chae.apiservice.api.service.message.service.Message;
+import com.chae.apiservice.message.dto.MessageRequest;
+import com.chae.apiservice.message.enumeration.MessageTypeEnumeration;
+import com.chae.apiservice.message.service.Message;
 import com.chae.apiservice.api.service.dao.AuctionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AuctionAcceptedPushMessage implements Message {
+public class VerifyAuctionKakaoMessage implements Message {
     private final AuctionRepository auctionRepository;
 
     @Autowired
-    public AuctionAcceptedPushMessage(AuctionRepository auctionRepository) {
+    public VerifyAuctionKakaoMessage(AuctionRepository auctionRepository) {
         this.auctionRepository = auctionRepository;
     }
 
     @Override
     public MessageTypeEnumeration getMessageType() {
-        return MessageTypeEnumeration.AUCTION_ACCEPTED_PUSH_MESSAGE;
+        return MessageTypeEnumeration.VERIFY_AUCTION_KAKAO_MESSAGE;
     }
 
 
@@ -27,7 +27,7 @@ public class AuctionAcceptedPushMessage implements Message {
     public boolean shouldSendMessage(MessageRequest messageRequest) {
         boolean send = false;
         Auction auction = auctionRepository.findAuctionById(messageRequest.getAuctionId());
-        if(auction.getBiddingId().equals("")||null == auction.getBiddingId()){
+        if(auction.isBankRegistered() == false){
             send = true;
         }
         return send;
@@ -35,23 +35,22 @@ public class AuctionAcceptedPushMessage implements Message {
 
     @Override
     public String getTitle() {
-        return "auction accepted!";
+        return null;
     }
 
     @Override
     public String getContent() {
-        return "auctionAccepted Content!";
+        return "you gotta verify this auction mate";
     }
 
     @Override
     public String getMethod() {
-        return "PUSH";
+        return "KAKAO";
     }
 
     @Override
     public String getTemplateId() {
-        return null;
+        return "templateidVerifyAuctionKakaoMessage";
     }
-
 
 }

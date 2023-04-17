@@ -1,13 +1,13 @@
 package com.chae.apiservice.api.controller;
 
 import com.chae.apiservice.api.dto.Auction;
-import com.chae.apiservice.api.service.message.dto.MessageRequest;
+import com.chae.apiservice.message.dto.MessageRequest;
 import com.chae.apiservice.api.dto.RequestAuctionDTO;
 import com.chae.apiservice.api.dto.RequestAuctionResponseDTO;
-import com.chae.apiservice.api.service.message.enumeration.MessageTypeEnumeration;
+import com.chae.apiservice.message.enumeration.MessageTypeEnumeration;
 import com.chae.apiservice.api.service.AuctionService;
-import com.chae.apiservice.api.service.message.service.factory.MessageFactory;
-import com.chae.apiservice.api.service.message.service.MessageService;
+import com.chae.apiservice.message.service.factory.MessageFactory;
+import com.chae.apiservice.message.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
