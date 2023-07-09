@@ -56,36 +56,5 @@ public class AuctionController {
     }
     // Implement other endpoints related to auctions here
 
-    @RestController
-    @RequiredArgsConstructor
-    public static class PollingController {
-        private static final Logger logger = LoggerFactory.getLogger(PollingController.class);
-        private final PollingService pollingService;
-        private final int MAX_ATTEMPTS = 5;
-        private final int POLLING_INTERVAL = 1;
-        private final int INITIAL_VALUE_ZERO = 0;
 
-        @GetMapping("/api/v2/polling")
-        public CompletableFuture<String> pollingTest(){
-            CompletableFuture<String> completableFuture = new CompletableFuture<>();
-            ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
-            AtomicInteger attemptCount = new AtomicInteger(INITIAL_VALUE_ZERO);
-            executorService.scheduleAtFixedRate(()->{
-                boolean isDone = pollingService.pollingTest();
-                if(isDone){
-                    String information = pollingService.requestInformation();
-                    completableFuture.complete(information);
-                    executorService.shutdown();
-                }else{
-                    int attempts = attemptCount.incrementAndGet();
-                    logger.info("Attempt: {}", attempts);
-                    if(attempts >= MAX_ATTEMPTS){
-                        completableFuture.completeExceptionally(new RuntimeException("information not received"));
-                        executorService.shutdown();
-                    }
-                }
-            },INITIAL_VALUE_ZERO, POLLING_INTERVAL, TimeUnit.SECONDS);
-            return completableFuture;
-        }
-    }
 }
