@@ -1,10 +1,10 @@
 package com.chae.apiservice.message.messages.message;
 
-import com.chae.apiservice.api.dto.Auction;
+import com.chae.apiservice.api.auction.dto.Auction;
 import com.chae.apiservice.message.dto.MessageRequest;
 import com.chae.apiservice.message.enumeration.MessageTypeEnumeration;
 import com.chae.apiservice.message.service.Message;
-import com.chae.apiservice.api.service.dao.AuctionRepository;
+import com.chae.apiservice.api.auction.service.dao.AuctionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

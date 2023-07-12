@@ -1,9 +1,10 @@
 package com.chae.apiservice.api.service.impl;
 
-import com.chae.apiservice.api.dto.RequestAuctionDTO;
-import com.chae.apiservice.api.dto.RequestAuctionResponseDTO;
-import com.chae.apiservice.api.enumeration.ApiEndpointEnumeration;
-import com.chae.apiservice.api.service.RestClient;
+import com.chae.apiservice.api.auction.dto.RequestAuctionDTO;
+import com.chae.apiservice.api.auction.dto.RequestAuctionResponseDTO;
+import com.chae.apiservice.api.auction.enumeration.ApiEndpointEnumeration;
+import com.chae.apiservice.api.auction.service.RestClient;
+import com.chae.apiservice.api.auction.service.impl.AuctionApiServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;

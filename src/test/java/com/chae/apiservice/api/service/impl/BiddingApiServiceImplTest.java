@@ -1,7 +1,8 @@
 package com.chae.apiservice.api.service.impl;
 
-import com.chae.apiservice.api.enumeration.ApiEndpointEnumeration;
-import com.chae.apiservice.api.service.RestClient;
+import com.chae.apiservice.api.auction.enumeration.ApiEndpointEnumeration;
+import com.chae.apiservice.api.auction.service.RestClient;
+import com.chae.apiservice.api.auction.service.impl.BiddingApiServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;

@@ -1,9 +1,10 @@
 package com.chae.apiservice.api.controller;
 
-import com.chae.apiservice.api.dto.Auction;
-import com.chae.apiservice.api.dto.RequestAuctionDTO;
-import com.chae.apiservice.api.dto.RequestAuctionResponseDTO;
-import com.chae.apiservice.api.service.AuctionService;
+import com.chae.apiservice.api.auction.controller.AuctionController;
+import com.chae.apiservice.api.auction.dto.Auction;
+import com.chae.apiservice.api.auction.dto.RequestAuctionDTO;
+import com.chae.apiservice.api.auction.dto.RequestAuctionResponseDTO;
+import com.chae.apiservice.api.auction.service.AuctionService;
 import com.chae.apiservice.message.service.Message;
 import com.chae.apiservice.message.service.MessageService;
 import com.chae.apiservice.message.service.factory.MessageFactory;
